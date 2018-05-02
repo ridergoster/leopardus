@@ -1,0 +1,5 @@
+{
+  "server": {
+    "port": "LEOPARDUS_SERVER_PORT"
+  }
+}
