@@ -8,7 +8,7 @@
     "syntax-dynamic-import",
     "transform-class-properties",
     ["module-resolver", {
-      "root": ["src","test"],
+      "root": ["./src"],
       "alias": {
         "public": "./public"
       }

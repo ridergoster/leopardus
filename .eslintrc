@@ -1,8 +1,7 @@
 env:
   browser: true
-  es6: true
-  mocha: true
   node: true
+  es6: true
 
 parser: babel-eslint
 parserOptions:
@@ -11,23 +10,57 @@ parserOptions:
     jsx: true
 
 extends:
-  - airbnb-base
+  - airbnb
+
+plugins:
+  - import
+  - react
 
 settings:
   import/resolver:
     babel-module: {}
+
 rules:
-  arrow-parens:
-    - error
-    - always
   import/extensions: 0
   import/first: 0
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies:
+      - "**/*.unit.js"
+      - "**/*.test.js"
+      - "**/*.spec.js"
   import/order:
     - error
     - newlines-between: always
-  semi:
+  react/jsx-pascal-case: 0
+  react/jsx-filename-extension: 0
+  react/prefer-stateless-function: 0
+  array-bracket-newline:
     - error
-    - never
+    - minItems: 1
+  array-element-newline:
+    - error
+    - always
+  arrow-parens:
+    - error
+    - always
+  brace-style:
+    - error
+    - 1tbs
+    - allowSingleLine: false
+  id-length:
+    - error
+    - exceptions:
+      - i
+  max-len: 0
+  no-multiple-empty-lines:
+    - warn
+    - max: 1
+  no-plusplus: 0
+  object-curly-newline:
+    - error
+    - minProperties: 1
+  object-property-newline: error
   padding-line-between-statements:
     - error
     - blankLine: always
@@ -59,38 +92,9 @@ rules:
       next:
         - const
         - let
-  no-multiple-empty-lines:
-    - warn
-    - max: 1
-  object-property-newline: error
-  object-curly-newline:
+  semi:
     - error
-    - minProperties: 1
-  array-element-newline:
-    - error
-    - always
-  array-bracket-newline:
-    - error
-    - minItems: 1
-  brace-style:
-    - error
-    - 1tbs
-    - allowSingleLine: false
-  max-len: 0
-  id-length:
-    - error
-    - exceptions:
-      - i
-  no-plusplus: 0
-  import/no-extraneous-dependencies:
-    - error
-    - devDependencies:
-      - "**/*.unit.js"
-      - "**/*.test.js"
-      - "**/*.spec.js"
-  react/jsx-pascal-case: 0
-  # react/forbid-prop-types: 0
-  react/jsx-filename-extension: 0
+    - never
 
 overrides:
   - files:
