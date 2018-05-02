@@ -1,0 +1,4 @@
+fragment RegionCard on Region {
+  name
+  code
+}
