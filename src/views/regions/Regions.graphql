@@ -1,0 +1,7 @@
+#import "../../components/regionCard/RegionCard.graphql"
+
+query Regions {
+  regions {
+    ...RegionCard
+  }
+}

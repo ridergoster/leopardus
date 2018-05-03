@@ -32,6 +32,7 @@ rules:
   import/order:
     - error
     - newlines-between: always
+  jsx-a11y/anchor-is-valid: 0
   react/jsx-pascal-case: 0
   react/jsx-filename-extension: 0
   react/prefer-stateless-function: 0
