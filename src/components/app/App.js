@@ -5,6 +5,12 @@ import {
   ApolloProvider,
 } from 'react-apollo'
 import {
+  InMemoryCache,
+} from 'apollo-cache-inmemory'
+import {
+  HttpLink,
+} from 'apollo-link-http'
+import {
   Route,
   Switch,
 } from 'react-router-dom'
@@ -15,6 +21,9 @@ import Region from 'views/regions/region'
 
 const client = new ApolloClient({
   uri: 'http://localhost:3000/graphql',
+  cache: new InMemoryCache().restore(window.__APOLLO_STATE__),  // eslint-disable-line
+  link: new HttpLink(),
+  ssrForceFetchDelay: 100,
 })
 
 class App extends React.PureComponent {
